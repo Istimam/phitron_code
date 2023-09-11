@@ -1,42 +1,42 @@
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-bool knapsack(int n, int a[], int x, int s) {
-    // Base case: If we have processed all elements
-    if (n == 0) {
-        if (s == x) {
-            return true;
-        }
-        return false;
-    }
+// bool knapsack(int n, int a[], int x, int s) {
+//     // Base case: If we have processed all elements
+//     if (n == 0) {
+//         if (s == x) {
+//             return true;
+//         }
+//         return false;
+//     }
 
-    // Try including the current element with a '+' sign
-    bool op1 = knapsack(n - 1, a, x, s + a[n - 1]);
+//     // Try including the current element with a '+' sign
+//     bool op1 = knapsack(n - 1, a, x, s + a[n - 1]);
 
-    // Try including the current element with a '-' sign
-    bool op2 = knapsack(n - 1, a, x, s - a[n - 1]);
+//     // Try including the current element with a '-' sign
+//     bool op2 = knapsack(n - 1, a, x, s - a[n - 1]);
 
-    // Return true if either of the above options leads to a valid result
-    return op1 || op2;
-}
+//     // Return true if either of the above options leads to a valid result
+//     return op1 || op2;
+// }
 
-int main() {
-    int n, x;
-    cin >> n >> x;
-    int a[n];
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
+// int main() {
+//     int n, x;
+//     cin >> n >> x;
+//     int a[n];
+//     for (int i = 0; i < n; i++) {
+//         cin >> a[i];
+//     }
 
-    // Check if it's possible to create the expression
-    if (knapsack(n, a, x, a[0])) {
-        cout << "YES" << endl;
-    } else {
-        cout << "NO" << endl;
-    }
+//     // Check if it's possible to create the expression
+//     if (knapsack(n, a, x, a[0])) {
+//         cout << "YES" << endl;
+//     } else {
+//         cout << "NO" << endl;
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 #include<bits/stdc++.h>
 using namespace std;
