@@ -1,65 +1,21 @@
-// #include <bits/stdc++.h>
-// using namespace std;
-
-// bool knapsack(int n, int a[], int x, int s) {
-//     // Base case: If we have processed all elements
-//     if (n == 0) {
-//         if (s == x) {
-//             return true;
-//         }
-//         return false;
-//     }
-
-//     // Try including the current element with a '+' sign
-//     bool op1 = knapsack(n - 1, a, x, s + a[n - 1]);
-
-//     // Try including the current element with a '-' sign
-//     bool op2 = knapsack(n - 1, a, x, s - a[n - 1]);
-
-//     // Return true if either of the above options leads to a valid result
-//     return op1 || op2;
-// }
-
-// int main() {
-//     int n, x;
-//     cin >> n >> x;
-//     int a[n];
-//     for (int i = 0; i < n; i++) {
-//         cin >> a[i];
-//     }
-
-//     // Check if it's possible to create the expression
-//     if (knapsack(n, a, x, a[0])) {
-//         cout << "YES" << endl;
-//     } else {
-//         cout << "NO" << endl;
-//     }
-
-//     return 0;
-// }
-
 #include<bits/stdc++.h>
 using namespace std;
 bool ans = false;
-bool knapsack(int n,int a[],int x,int s)
+bool knapsack(int n,int a[],int s,int x)
 {
     if(n == 0)
     {
         if(s == x)
         {
-            return true;
+            ans = true;
         }
         return false;
     }
-    // if(ans == false)
-    // {
-        //  return ;
-        // return s;
-        return knapsack(n - 1, a, x, s - a[n]) || knapsack(n - 1, a, x, s + a[n]);
-        // return s;
-    // }
-    // int op1 = knapsack(n - 1, a, x, s - a[n-1]);
-    // int op2 = knapsack(n - 1, a, x, s + a[n - 1]);
+    if(ans == false)
+    {
+        knapsack(n - 1, a, s, a[n-1] + x);
+        knapsack(n - 1, a, s, a[n - 1] - x);
+    }
 }
 int main()
 {
@@ -71,7 +27,8 @@ int main()
         cin >> a[i];
     }
     int x = 0;
-    if(knapsack(n, a, x, s))
+    knapsack(n, a, s, x);
+    if(ans)
     {
         cout << "YES" << endl;
     }
