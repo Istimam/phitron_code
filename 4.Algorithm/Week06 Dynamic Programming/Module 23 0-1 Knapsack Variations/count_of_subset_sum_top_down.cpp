@@ -12,6 +12,7 @@ int subset_sum(int n, int a[], int s)
     }
     if (dp[n][s] != -1)
         return dp[n][s];
+
     if (a[n - 1] <= s)
     {
         int op1 = subset_sum(n - 1, a, s - a[n - 1]);
@@ -34,32 +35,7 @@ int main()
     }
     int s;
     cin >> s;
-    dp[0][0] = true;
-    for (int i = 1; i <= s; i++)
-    {
-        dp[0][i] = 0;
-    }
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = 0; j <= s; j++)
-        {
-            if (a[i - 1] <= j)
-            {
-                dp[i][j] = dp[i - 1][j - a[i - 1]] + dp[i - 1][j];
-            }
-            else
-            {
-                dp[i][j] = dp[i - 1][j];
-            }
-        }
-    }
-    for (int i = 0; i <= n; i++)
-    {
-        for (int j = 0; j <= s; j++)
-        {
-            cout << dp[i][j] << " ";
-        }
-        cout << endl;
-    }
+    memset(dp, -1, sizeof(dp));
+    cout << "Way's to find target value "<<s<<": " << subset_sum(n, a, s);
     return 0;
 }

@@ -31,6 +31,7 @@ int main()
             }
         }
     }
+    cout << "Whole Table : " << endl;
     for (int i = 0; i <= n; i++)
     {
         for (int j = 0; j <= s; j++)
@@ -39,9 +40,15 @@ int main()
         }
         cout << endl;
     }
-    // if (dp[n][s])
-    //     cout << "YES" << endl;
-    // else
-    //     cout << "NO" << endl;
+    // int i = s;
+    // cout << "Min no of value nedded to make " << s<<": ";
+    // for (int j = 1; j <= n; j++)
+    // {
+    //     if(dp[j][s] != 0)
+    //     {
+    //         cout << dp[j][s] << " ";
+    //     }
+    // }
+    // cout << "Way's to find target value " << s << ": " << dp[n][s];
     return 0;
 }
