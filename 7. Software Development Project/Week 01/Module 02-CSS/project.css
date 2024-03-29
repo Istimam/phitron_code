@@ -1,0 +1,91 @@
+body{
+    margin:0px;
+    padding: 0px;
+}
+.navbar-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #007877;
+}
+.logo{
+    width: 100px;
+}
+.menu-container{
+    display: flex;
+    list-style: none;
+    gap:20px;
+    font-size: 22px;
+    color: white;
+}
+.banner-img{
+    width: 100%;
+}
+.banner-container{
+    display: flex;
+    width:80%;
+    height:100vh;
+    align-items: center;
+    margin:auto;
+    text-align: center;
+}
+.title{
+    font-size: 66px;
+    font-weight: bold;
+    color: #00CA9A;
+    text-align: center;
+    padding:20px;
+}
+.descrption{
+    font-size: 22px;
+}
+button{
+    padding:15px 25px;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+.app-btn{
+    background-color: #00CA9A;
+}
+.doc-btn{
+    background-color: #0D7B77;
+}
+.service-card{
+    width: 300px;
+    height: 350px;
+    box-shadow: 8px 8px 16px gray;
+    border-radius: 5px;
+    padding : 10px;
+    text-align: center;
+}
+.service-img{
+    width: 180px;
+
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.contact-container{
+    text-align: center;
+}
+.input-box{
+    padding: 15px 30px;
+    margin:10px;
+}
+.text-area{
+    padding: 35px 50px
+}
+.submit-btn{
+    padding:10px 20px;
+    width: 35%;
+    max-width: 250px;
+    margin-top: 20px;
+    background-color: #00CA9A;
+    color: white;
+    font-size: 22px;
+    border:none;
+}
